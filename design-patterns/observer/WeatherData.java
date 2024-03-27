@@ -14,17 +14,15 @@ public class WeatherData implements Subject{
     public WeatherData() {
         this.observers = new ArrayList<observer.Observer>();
     }
-    @Override
+
     public void registerObserver(observer.Observer o) {
         observers.add(o);
     }
 
-    @Override
     public void removeObserver(observer.Observer o) {
         observers.remove(o);
     }
 
-    @Override
     public void notifyObservers() {
         for(Observer observer : observers) {
             observer.update(temperature, humidity, pressure);

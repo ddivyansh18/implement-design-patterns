@@ -22,12 +22,10 @@ public class HeatIndexDisplay implements Observer, DisplayElement{
                 (0.0000000000481975 * (t * t * t * rh * rh * rh)));
     }
 
-    @Override
     public void display() {
         System.out.println("heat index is : " + heatIndex);
     }
 
-    @Override
     public void update(float temp, float humidity, float pressure) {
         heatIndex = getHeatIndex(temp, humidity);
         display();
